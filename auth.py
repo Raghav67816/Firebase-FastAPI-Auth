@@ -68,7 +68,7 @@ def login_user(login: UserLogin):
     
 
 @auth_router.post("/resetpassword")
-def email_and_tokenword(email_and_token: EmailAndToken):
+def reset_password(email_and_token: EmailAndToken):
     try:
         verify_user = auth.verify_id_token(email_and_token.token)
         if verify_user.get("email") == email_and_token.email:
